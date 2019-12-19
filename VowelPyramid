@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i,j=0,k=1,l,z,s,n=0;
+    char v[50],line[100];
+    gets(line);
+    l=strlen(line);
+    for(i=0; i<=l; i++)
+    {
+        if(line[i]=='a' || line[i]=='e' || line[i]=='i' || line[i]=='o' || line[i]=='u')
+        {
+            v[j]=line[i];
+            ++j;
+        }
+    }
+    for(z=0; k+z<=j; z++)
+    {
+        k=z+k;
+    }
+    for(i=1; i<=z; i++)
+    {
+        {
+            for(s=1; s<=z-i; s++) printf(" ");
+        }
+        for(k=1; k<=i; k++)
+        {
+            if(n<j)
+            {
+                printf("%c ",v[n]);
+            }
+            ++n;
+        }
+        printf("\n");
+
+    }
+    return 0;
+}
