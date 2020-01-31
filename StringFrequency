@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include <string.h>
+int main()
+{
+    int n,i,j,v=1,cnt[100],c;
+    char str[20][10];
+    scanf("%d",&n);
+    for(i=0; i<n; i++)
+    {
+        scanf("%s",str[i]);
+    }
+    for(i=0; i<n; i++)
+    {
+        cnt[i]=1;
+        for(j=i+1; j<n; j++)
+        {
+            v=strcmp(str[i],str[j]);
+            if(!v)
+            {
+                cnt[i]++;
+                for (c=j; c<n-1; c++)
+                {
+                    strcpy(str[c],str[c+1]);
+                }
+                n--;
+            }
+        }
+    }
+    for(i=0; i<n; i++)
+    {
+        printf("%s = %d\n",str[i],cnt[i]);
+    }
+    return 0;
+}
